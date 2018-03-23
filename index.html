@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MoiPong</title>
+  <link rel="stylesheet" href="assets/css/moipong.css">
+  <script defer src="assets/js/fontawesome-all.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/moipong.js"></script>
+</head>
+<body>
+  <div class="header">
+    <span class="logo-helper"></span>
+    <img src="assets/images/logo.png" class="logo">
+  </div>
+
+  <div class="current-game">
+    <span class="player-name player-1-name" data-player-id="">----- -----</span>
+    <span class="player-score player-1-score" data-player-id="">-</span>
+    <span class="vs">X</span>
+    <span class="player-score player-2-score" data-player-id="">-</span>
+    <span class="player-name player-2-name" data-player-id="">----- -----</span>
+    <button class="add-score-player-1"><i class="fas fa-plus-square"></i></button>
+    <button class="add-score-player-2"><i class="fas fa-plus-square"></i></button>
+    <span class="winner">Player 1 wins!</span>
+  </div>
+
+  <div class="queue">
+    <span class="next-player" data-player-id=""></span>
+    <div class="player-list">
+    </div>
+    <input type="text" class="queue-input" placeholder="Add Player...">
+    <i class="fa fa-plus-square add-player"></i>
+  </div>
+</body>
+</html>
