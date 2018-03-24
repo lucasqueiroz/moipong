@@ -8,12 +8,11 @@ MoiPong is a dashboard to control a line of players for the friday Ping Pong gam
 It also stores the current scores of the players.
 When a player reaches 5 points, they win.
 
-## Screenshots
-![MoiPong Home](https://i.imgur.com/Vt1KCQC.png)
+The project can be used here: https://moipong.herokuapp.com/
 
 ## What can be improved
 - [ ] Better code
-- [x] Better design
+- [ ] Better design
 - [ ] Data persistence
 - [ ] Game configuration
 - [ ] Add images to players
