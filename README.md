@@ -10,6 +10,10 @@ When a player reaches 5 points, they win.
 
 The project can be used here: https://moipong.herokuapp.com/
 
+## Screenshot
+
+![MoiPong Screenshot](https://i.imgur.com/Vt1KCQC.png)
+
 ## What can be improved
 - [ ] Better code
 - [ ] Better design
