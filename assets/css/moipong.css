@@ -6,141 +6,36 @@ body {
   font-family: 'Quicksand';
 }
 
-.header {
-  width: 100%;
-  height: 100px;
-  /* background-color: #F2EFEA; */
-  position: relative;
-  top: 0px;
-  left: 0px;
-  display: block;
-}
-
-.logo-helper {
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .logo {
-  height: 75%;
+  height: 75px;
   width: auto;
   vertical-align: middle;
   padding-left: 5%;
 }
 
-.current-game {
-  display: table;
+.btn-card {
   width: 100%;
-  text-align: center;
-  margin-top: 25px;
 }
 
-.player-1-name {
-  margin-right: 15%;
+.card-vs {
+  border: none;
+  margin-top: 25%;
 }
 
-.player-2-name {
-  margin-left: 15%;
-}
-
-.player-1-score {
-  margin-right: 3%;
-}
-
-.player-2-score {
-  margin-left: 3%;
-}
-
-.player-name {
-  font-size: 35px;
-}
-
-.player-score,
-.vs {
-  font-size: 50px;
-}
-
-.queue {
-  margin-top: 50px;
-  text-align: center;
-  background-color: #e6e8e1;
-  width: 65%;
-  display: table;
-  margin-right: auto;
-  margin-left: auto;
-  box-shadow: 0 0 15px 10px #e6e8e1;
-}
-
-.queue > *,
-.queue > * > *:not(.remove-player) {
-  display: block;
+.top-buffer {
+  margin-top: 20px;
 }
 
 .next-player {
   font-size: 30px;
+  display: none;
 }
 
-.player-list {
-  margin-top: 15px;
-}
-
-.player-list-item {
-  padding-bottom: 10px;
-}
-
-.queue-input,
-.queue-input::placeholder {
-  margin-top: 10px;
-  height: 35px;
-  width: 100%;
-  background-color: #e6e8e1;
-  box-shadow: 0 0 100px 1px #c6cbbb;
-  border: none;
-  margin-bottom: 10px;
-  color: #c6cbbb;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.remove-player {
-  color: #c6cbbb;
-  padding-left: 5%;
-}
-
-.remove-player:hover,
-.next-player:hover .remove-player,
-.player-list-item:hover .remove-player {
-  color: #F25F5C;
+.list-group-item:hover:not(.add-player-li) {
+  background-color: #dc3545 !important
 }
 
 .add-player {
-  float: right;
-  margin-right: 6px;
-  margin-top: -38px;
-  position: relative;
-  z-index: 2;
-  font-size: 20px;
-  font-weight: bold;
-  color: #c6cbbb;
-}
-
-.queue-input:focus + .add-player {
-  color: #6DA34D;
-}
-
-.add-score-player-1,
-.add-score-player-2 {
-  display: none;
-  width: 50%;
-  font-size: 30px;
-  background: none;
-  border: none;
-  color: #6DA34D;
-}
-
-.winner {
-  display: none;
-  font-size: 50px;
+  width: 100%;
+  text-align: center;
 }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MoiPong</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/moipong.css">
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+  <header>
+    <div class="navbar navbar-light">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand d-flex align-items-center" href="#"><img src="assets/images/logo.png" class="logo"></a>
+        <button class="fas fa-cog"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row current-game">
+      <div class="col-sm-5">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center player-1-name">----- -----</h4>
+            <h1 class="text-center player-1-score">--</h4>
+            <a href="#" class="btn btn-success btn-card disabled add-score-player-1">Add Point</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="card card-vs">
+          <div class="card-body">
+            <h1 class="text-center vs-text">VS</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center player-2-name">----- -----</h4>
+            <h1 class="text-center player-2-score">--</h4>
+            <a href="#" class="btn btn-success btn-card disabled add-score-player-2">Add Point</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row top-buffer">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group text-center">
+              <li class="list-group-item next-player"></li>
+              <div class="player-list">
+              </div>
+              <li class="list-group-item add-player-li"><input type="text" placeholder="Add Player..." class="add-player"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <h3 class="text-center winner">Winner!</h3>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="assets/js/fontawesome-all.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/moipong.js"></script>
+</body>
+</html>
