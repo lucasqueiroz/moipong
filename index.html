@@ -2,34 +2,76 @@
 <html>
 <head>
   <title>MoiPong</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/moipong.css">
-  <script defer src="assets/js/fontawesome-all.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/moipong.js"></script>
 </head>
 <body>
-  <div class="header">
-    <span class="logo-helper"></span>
-    <img src="assets/images/logo.png" class="logo">
-  </div>
-
-  <div class="current-game">
-    <span class="player-name player-1-name" data-player-id="">----- -----</span>
-    <span class="player-score player-1-score" data-player-id="">-</span>
-    <span class="vs">X</span>
-    <span class="player-score player-2-score" data-player-id="">-</span>
-    <span class="player-name player-2-name" data-player-id="">----- -----</span>
-    <button class="add-score-player-1"><i class="fas fa-plus-square"></i></button>
-    <button class="add-score-player-2"><i class="fas fa-plus-square"></i></button>
-    <span class="winner">Player 1 wins!</span>
-  </div>
-
-  <div class="queue">
-    <span class="next-player" data-player-id=""></span>
-    <div class="player-list">
+  <header>
+    <div class="navbar navbar-light">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand d-flex align-items-center" href="#"><img src="assets/images/logo.png" class="logo"></a>
+        <button class="fas fa-cog"></button>
+      </div>
     </div>
-    <input type="text" class="queue-input" placeholder="Add Player...">
-    <i class="fa fa-plus-square add-player"></i>
+  </header>
+
+  <div class="container">
+    <div class="row current-game">
+      <div class="col-sm-5">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center player-1-name">----- -----</h4>
+            <h1 class="text-center player-1-score">--</h4>
+            <a href="#" class="btn btn-success btn-card disabled add-score-player-1">Add Point</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="card card-vs">
+          <div class="card-body">
+            <h1 class="text-center vs-text">VS</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center player-2-name">----- -----</h4>
+            <h1 class="text-center player-2-score">--</h4>
+            <a href="#" class="btn btn-success btn-card disabled add-score-player-2">Add Point</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row top-buffer">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group text-center">
+              <li class="list-group-item next-player"></li>
+              <div class="player-list">
+              </div>
+              <li class="list-group-item add-player-li"><input type="text" placeholder="Add Player..." class="add-player"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <h3 class="text-center winner">Winner!</h3>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="assets/js/fontawesome-all.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/moipong.js"></script>
 </body>
 </html>

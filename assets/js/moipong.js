@@ -5,14 +5,14 @@ $(document).ready(function() {
   var currentId = 0;
   var nextPlayer = undefined;
 
-  $('.queue-input').on('keydown', function(e) {
+  $('.add-player').on('keydown', function(e) {
     if (!e) {
       var e = window.event;
     }
 
     if (e.keyCode == 13) {
-      addPlayer($('.queue-input').val());
-      $('.queue-input').val('');
+      addPlayer($('.add-player').val());
+      $('.add-player').val('');
     }
   });
 
@@ -63,14 +63,12 @@ $(document).ready(function() {
 
   function winGame(player) {
     $('.winner').text(player.name + " wins!");
-    $('.winner').css('display', 'inline-block');
-    $('.current-game > *:not(.winner)').css('display', 'none');
+    $('#winModal').modal();
     setTimeout(resetWin, 2000);
   }
 
   function resetWin() {
-    $('.winner').css('display', 'none');
-    $('.current-game > *:not(.winner)').css('display', 'inline-block');
+    $('#winModal').modal("hide");
   }
 
   function addPlayer(playerName) {
@@ -96,7 +94,7 @@ $(document).ready(function() {
       currentPlayers.push(players[0]);
       players.shift();
       buildCurrentPlayersInterface();
-      $('.add-score-player-1, .add-score-player-2').css('display', 'inline-block');
+      $('.add-score-player-1, .add-score-player-2').removeClass('disabled');
     } else if (currentPlayers.length == 2) {
       $('.player-1-name').text(currentPlayers[0].name).data('player-id', currentPlayers[0].id);
       $('.player-1-score').text(currentPlayers[0].currentScore).data('player-id', currentPlayers[0].id);
@@ -118,16 +116,17 @@ $(document).ready(function() {
   }
 
   function buildPlayerList() {
-    console.log(players);
     if (players.length > 0) {
       setNextPlayer(players[0]);
+    } else {
+      removeNextPlayer();
     }
     let html = "";
     if (players.length > 1) {
       for (var i = 1; i < players.length; i++) {
         let player = players[i];
-        let span = "<span class='player-list-item' data-player-id='" + player.id + "'>" + player.name + " <i class='fas fa-minus-square remove-player'></i></span>";
-        html += span;
+        let li = "<li class='list-group-item player-list-item' data-player-id='" + player.id + "'>" + player.name + "</li>";
+        html += li;
       }
     }
     $('.player-list').html(html);
@@ -135,14 +134,18 @@ $(document).ready(function() {
 
   function setNextPlayer(player) {
     nextPlayer = player;
-    $('.next-player').html(nextPlayer.name + " <i class='fas fa-minus-square remove-player'></i>").data('player-id', nextPlayer.id);
+    $('.next-player').html(nextPlayer.name).data('player-id', nextPlayer.id).css('display', 'inline');
+  }
+
+  function removeNextPlayer() {
+    nextPlayer = undefined;
+    $('.next-player').html('').data('player-id', '').css('display', 'none');
   }
 
   function addPlayerInterface(player, index) {
     if (index == 0) {
       return;
     }
-    console.log(currentPlayersInInterface);
     if (!currentPlayersInInterface().includes(player.id)) {
       $('.player-list').append("<span class='player-list-item' data-player-id='" + player.id + "'>" + player.name + " <i class='fas fa-minus-square remove-player'></i></span>")
     }
