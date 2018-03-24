@@ -10,7 +10,7 @@ When a player reaches 5 points, they win.
 
 ## What can be improved
 - [ ] Better code
-- [ ] Better design
+- [x] Better design
 - [ ] Data persistence
 - [ ] Game configuration
 - [ ] Add images to players
