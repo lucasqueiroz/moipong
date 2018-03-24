@@ -16,7 +16,7 @@ The project can be used here: https://moipong.herokuapp.com/
 
 ## What can be improved
 - [ ] Better code
-- [ ] Better design
+- [x] Better design
 - [ ] Data persistence
 - [ ] Game configuration
 - [ ] Add images to players
