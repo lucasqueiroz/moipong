@@ -13,6 +13,24 @@ body {
   padding-left: 5%;
 }
 
+.btn-config {
+  color: #888;
+}
+
+.btn-config:hover {
+  color: #000;
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.btn-save-config,
+.btn-close-config {
+  color: #dddddd !important;
+}
+
 .btn-card {
   width: 100%;
 }

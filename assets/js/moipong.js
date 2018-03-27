@@ -4,6 +4,17 @@ $(document).ready(function() {
   var currentPlayers = [];
   var currentId = 0;
   var nextPlayer = undefined;
+  var maxPoints = 5;
+
+  $('.btn-config').on('click', function() {
+    $('#configModal').modal();
+    $('#configMaxPoints').val(maxPoints);
+  });
+
+  $('.btn-save-config').on('click', function() {
+    maxPoints = $('#configMaxPoints').val();
+    $('#configModal').modal('hide');
+  });
 
   $('.add-player').on('keydown', function(e) {
     if (!e) {
@@ -26,7 +37,7 @@ $(document).ready(function() {
     let playerTwo = currentPlayers[1];
     playerOne.currentScore += 1;
     updateScores();
-    if (playerOne.currentScore == 5) {
+    if (playerOne.currentScore == maxPoints) {
       currentPlayers[0].currentScore = 0;
       currentPlayers[1].currentScore = 0;
       winGame(currentPlayers[0]);
@@ -46,7 +57,7 @@ $(document).ready(function() {
     let playerTwo = currentPlayers[1];
     playerTwo.currentScore += 1;
     updateScores();
-    if (playerTwo.currentScore == 5) {
+    if (playerTwo.currentScore == maxPoints) {
       currentPlayers[0].currentScore = 0;
       currentPlayers[1].currentScore = 0;
       winGame(currentPlayers[1]);
