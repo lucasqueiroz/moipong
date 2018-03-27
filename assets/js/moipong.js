@@ -38,6 +38,7 @@ $(document).ready(function() {
     playerOne.currentScore += 1;
     updateScores();
     if (playerOne.currentScore == maxPoints) {
+      $('.player-1-name').addClass('animated tada');
       currentPlayers[0].currentScore = 0;
       currentPlayers[1].currentScore = 0;
       winGame(currentPlayers[0]);
@@ -58,6 +59,7 @@ $(document).ready(function() {
     playerTwo.currentScore += 1;
     updateScores();
     if (playerTwo.currentScore == maxPoints) {
+      $('.player-2-name').addClass('animated tada');
       currentPlayers[0].currentScore = 0;
       currentPlayers[1].currentScore = 0;
       winGame(currentPlayers[1]);
@@ -80,6 +82,8 @@ $(document).ready(function() {
 
   function resetWin() {
     $('#winModal').modal("hide");
+    $('.player-1-name').removeClass('animated tada');
+    $('.player-2-name').removeClass('animated tada');
   }
 
   function addPlayer(playerName) {
