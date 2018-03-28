@@ -26,6 +26,11 @@ body {
   transform: rotate(90deg);
 }
 
+.card:not(.card-vs) {
+  border-radius: 0px;
+  box-shadow: -1px 1px 1px #888;
+}
+
 .btn-save-config,
 .btn-close-config {
   color: #dddddd !important;
@@ -56,4 +61,9 @@ body {
 .add-player {
   width: 100%;
   text-align: center;
+  border: none;
+}
+
+.list-group-item {
+  border: none;
 }
